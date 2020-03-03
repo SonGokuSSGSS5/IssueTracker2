@@ -17,7 +17,6 @@
       <input class="un " type="text" align="center" placeholder="Username">
       <input class="pass" type="password" align="center" placeholder="Password">
       <a class="submit" align="center">Sign in</a><br><br>
-      <p class="forgot" align="center"><a href="#">Forgot Password?</a></p>
     </form>      
                 
     </div>

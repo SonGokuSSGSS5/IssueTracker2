@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
  body {
-        background-color: #F3EBF6;
+        background-color: #C5C4F5;
         font-family: 'Ubuntu', sans-serif;
     }
     
@@ -16,7 +16,7 @@
     
     .sign {
         padding-top: 40px;
-        color: #8C55AA;
+        color: #454B9B;
         font-family: 'Ubuntu', sans-serif;
         font-weight: bold;
         font-size: 23px;
@@ -29,7 +29,7 @@
 	    padding: 8px 10px;
 	    margin-left:50px;
 	    border-radius: 4px;
-	    background-color: #E1BEE7
+	    background-color: #C5C4F5
 	}
 	#select-button2
 	{
@@ -38,7 +38,7 @@
 	    padding: 8px 10px;
 	    margin-left:50px;
 	    border-radius: 4px;
-	    background-color: #E1BEE7
+	    background-color: #C5C4F5
 	}
 	#select-button3
 	{
@@ -47,7 +47,7 @@
 	    padding: 8px 10px;
 	    margin-left:50px;
 	    border-radius: 4px;
-	    background-color: #E1BEE7
+	    background-color: #C5C4F5
 	}
     
     .un {
@@ -104,7 +104,7 @@
       cursor: pointer;
         border-radius: 5em;
         color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
+        background: linear-gradient(to right, #2823BF, #121980);
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
