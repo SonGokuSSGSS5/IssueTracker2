@@ -26,7 +26,7 @@
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<f:radiobutton path="gender"  id="male" name="gender" value="male"/>
 	  <label for="male">Male</label>
 	  <f:radiobutton path="gender" id="female" name="gender" value="female"/>
-	  <label for="female">Female</label><p><f:errors path="gender"/></p><br>
+	  <label for="female">Female</label><p><f:errors path="gender"/></p><br><br> 
 	  
       <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><p><f:errors path="contactno"/></p>
       
