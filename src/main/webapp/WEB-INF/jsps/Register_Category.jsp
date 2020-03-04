@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,20 +15,29 @@
 <body>
 <div class="main">
     <p class="sign" align="center">Register</p>
-    <form class="form1">
-      <input class="un " type="text" align="center" placeholder="FirstName">
-      <input class="un " type="text" align="center" placeholder="LastName">
-      <input class="un " type="date" align="center" placeholder="DOB"><br>
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" id="male" name="gender" value="male">
+    <f:form class="form1" action="registerCategoryRep" method="post" modelAttribute="categoryRep">
+    
+      <f:input class="un " type="text" path="firstname" align="center" placeholder="FirstName"/><f:errors path="firstname"/>
+      
+      <f:input class="un " type="text" path="lastname" align="center" placeholder="LastName"/><f:errors path="lastname"/>
+      
+      <f:input class="un " type="date" path="dob" align="center" placeholder="DOB"/><br><f:errors path="dob"/>
+      
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<f:radiobutton path="gender"  id="male" name="gender" value="male"/>
 	  <label for="male">Male</label>
-	  <input type="radio" id="female" name="gender" value="female">
-	  <label for="female">Female</label><br><br>
-      <input class="un " type="text" align="center" placeholder="ContactNo">
-      <input class="un " type="text" align="center" placeholder="CategoryRep_id">
-      <input class="un " type="text" align="center" placeholder="Category">
-      <input class="pass" type="password" align="center" placeholder="Password">
-	  <a class="submit" align="center">Register</a>
-    </form>      
+	  <f:radiobutton path="gender" id="female" name="gender" value="female"/>
+	  <label for="female">Female</label><f:errors path="gender"/><br><br> 
+	  
+      <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><f:errors path="contactno"/>
+      
+      <f:input class="un " path="categoryrepid" type="text" align="center" placeholder="CategoryRep_id"/><f:errors path="categoryrepid"/>
+      
+      <f:input class="un " type="text" path="category" align="center" placeholder="Category"/><f:errors path="category"/>
+      
+      <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><f:errors path="password"/>
+      
+	  <input type="submit" class="submit" value="Register">
+    </f:form>      
                 
     </div>
 </body>

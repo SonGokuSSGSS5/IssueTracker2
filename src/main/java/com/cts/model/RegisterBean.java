@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-import org.springframework.stereotype.Component;
+
 
 
 @Entity
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 public class RegisterBean {
 	
 	@NotBlank(message = "FirstName should not be empty")
-	
 	private String firstname;
 	
 	@NotBlank(message = "LastName should not be empty")
@@ -33,8 +32,7 @@ public class RegisterBean {
 	@Id
 	private String userid;
 	
-	@NotBlank(message = "Password should not be empty")
-	@Pattern(regexp = "(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\\D*\\d)\\w{8,25}",message = "Password should atleast 1 samll ,1 capital ,1 number and have minimun 8 and maximum 25 characters")
+	@Pattern(regexp = "(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)\\w{8,25}",message = "Password should atleast 1 samll ,1 capital ,1 number and have minimun 8 and maximum 25 characters")
 	private String password;
 	
 	@NotBlank(message = "Choose security question 1")

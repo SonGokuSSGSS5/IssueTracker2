@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>category rep registered</title>
 </head>
 <body>
-<h1>User Registered Successfully</h1><br>
 
-<h4><a href="hi">Click here to Sign-in</a></h4>
+<h1>Category rep registered successfully</h1>
+
+<h4><a href="SignCategory">Click here to Sign-in</a></h4>
 
 </body>
 </html>
