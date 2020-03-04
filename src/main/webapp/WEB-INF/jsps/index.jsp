@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -15,15 +16,26 @@
 <body>
   <div class="main">
     <p class="sign" align="center">Sign in</p>
-    <form class="form1" method="post">
-      <input class="un " type="text" align="center" placeholder="Username">
-      <input class="pass" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center">Sign in</a><br><br><br>
+    
+<c:if test="${flag==1 }">
+<h2>Invalid Username or Password</h2>
+</c:if>
+    
+    <f:form class="form1" method="post" action="login" modelAttribute="login">
+      <f:input class="un " type="text" align="center" path="userid" placeholder="UserId"/><p><f:errors path="userid"/></p>
+      
+      <f:input class="pass" type="password" align="center" path="password" placeholder="Password"/><p><f:errors path="password"/></p>
+      
+      <input class="submit" type="submit" value="Sign in"><br><br><br>
+      
       <a class="register" href="/RegisterUser" align="center">Register</a>
+      
       <p class="forgot" align="center"><a href="#">Forgot Password?</a></p>
+      
       <p class="links" align="center"><a href="/SignAdmin">Sign in as Admin</a></p>
+      
       <p class="links" align="center"><a href="/SignCategory">Sign in as Category Representative</a></p>
-    </form>      
+    </f:form>      
                 
     </div>
      

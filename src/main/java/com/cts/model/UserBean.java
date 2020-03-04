@@ -11,7 +11,7 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="user")
-public class RegisterBean {
+public class UserBean {
 	
 	@NotBlank(message = "FirstName should not be empty")
 	private String firstname;
@@ -158,7 +158,7 @@ public class RegisterBean {
 		this.sanswer3 = sanswer3;
 	}
 
-	public RegisterBean() {
+	public UserBean() {
 		
 	}
 	
