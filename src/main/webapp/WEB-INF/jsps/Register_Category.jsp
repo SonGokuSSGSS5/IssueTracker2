@@ -17,24 +17,24 @@
     <p class="sign" align="center">Register</p>
     <f:form class="form1" action="registerCategoryRep" method="post" modelAttribute="categoryRep">
     
-      <f:input class="un " type="text" path="firstname" align="center" placeholder="FirstName"/><f:errors path="firstname"/>
+      <f:input class="un " type="text" path="firstname" align="center" placeholder="FirstName"/><p><f:errors path="firstname"/></p>
       
-      <f:input class="un " type="text" path="lastname" align="center" placeholder="LastName"/><f:errors path="lastname"/>
+      <f:input class="un " type="text" path="lastname" align="center" placeholder="LastName"/><p><f:errors path="lastname"/></p>
       
-      <f:input class="un " type="date" path="dob" align="center" placeholder="DOB"/><br><f:errors path="dob"/>
+      <f:input class="un " type="date" path="dob" align="center" placeholder="DOB"/><br><p><f:errors path="dob"/></p>
       
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<f:radiobutton path="gender"  id="male" name="gender" value="male"/>
 	  <label for="male">Male</label>
 	  <f:radiobutton path="gender" id="female" name="gender" value="female"/>
-	  <label for="female">Female</label><f:errors path="gender"/><br><br> 
+	  <label for="female">Female</label><p><f:errors path="gender"/></p><br><br> 
 	  
-      <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><f:errors path="contactno"/>
+      <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><p><f:errors path="contactno"/></p>
       
-      <f:input class="un " path="categoryrepid" type="text" align="center" placeholder="CategoryRep_id"/><f:errors path="categoryrepid"/>
+      <f:input class="un " path="categoryrepid" type="text" align="center" placeholder="CategoryRep_id"/><p><f:errors path="categoryrepid"/></p>
       
-      <f:input class="un " type="text" path="category" align="center" placeholder="Category"/><f:errors path="category"/>
+      <f:input class="un " type="text" path="category" align="center" placeholder="Category"/><p><f:errors path="category"/></p>
       
-      <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><f:errors path="password"/>
+      <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><p><f:errors path="password"/></p>
       
 	  <input type="submit" class="submit" value="Register">
     </f:form>      

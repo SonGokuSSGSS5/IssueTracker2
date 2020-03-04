@@ -9,24 +9,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cts.dao.CategoryRepDao;
 import com.cts.dao.RegisterDao;
-import com.cts.model.CategoryRepBean;
 import com.cts.model.RegisterBean;
 
 @Controller
-public class MyController {
-	
+public class UserController {
+
 	@Autowired
 	private RegisterDao rd;
-	
-	@Autowired
-	private CategoryRepDao crd;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET) //load the basic user sign in page
 	public String index() {
 		return "index";
 	}
+
+	
 	
 	@RequestMapping(value="/hi",method=RequestMethod.GET) //After registration ,load the basic user sign in page
 	public String index1() {
@@ -54,36 +51,5 @@ public class MyController {
 		return page;
 	}
 	
-	
-	@RequestMapping(value="/SignAdmin",method=RequestMethod.GET) // sign in page for admin
-	public String signInAdmin() {
-		return "AdminSignin";
-	}
-	
-	@RequestMapping(value="/SignCategory",method=RequestMethod.GET) // category sign in
-	public String signInCategoryRep() {
-		return "CategorySignin";
-	}
-	
-	@RequestMapping(value="/RegisterCategory",method=RequestMethod.GET) // category registration page
-	public String registerCategoryRep(@ModelAttribute("categoryRep") CategoryRepBean cb) {
-		return "Register_Category";
-	}
-	
-	@RequestMapping(value="/registerCategoryRep",method=RequestMethod.POST) // go to success page
-	public String registerCategoryRepSubmit(@Valid @ModelAttribute("categoryRep")CategoryRepBean cb, BindingResult br) {
-		
-		String page="Register_Category";
-		
-		if(br.hasErrors()) {
-			page="Register_Category";
-		}
-		else {
-			crd.save(cb);
-			page="categoryrepsuccess";
-		}
-		
-		return page;
-	}
 	
 }
