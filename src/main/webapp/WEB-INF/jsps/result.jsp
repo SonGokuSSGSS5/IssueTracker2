@@ -8,17 +8,7 @@
 </head>
 <body>
 
-<h1>Welcome ${admin.adminid }</h1>
-<br>
-<br>
-<br>
-
-<h2><a href="addCategory">Add Category</a></h2>
-<br>
-<br>
-
-
-<h2><a href="ViewCategory">View Category</a></h2>
+<h1>The Admin has Added the Category => ${category1.category } to the DB successfully</h1>
 
 </body>
 </html>

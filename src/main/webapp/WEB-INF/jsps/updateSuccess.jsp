@@ -8,17 +8,10 @@
 </head>
 <body>
 
-<h1>Welcome ${admin.adminid }</h1>
-<br>
-<br>
-<br>
+<h1> Updated Successfully ${category1.categoryid } and ${category1.category }</h1>
+<br><br>
 
-<h2><a href="addCategory">Add Category</a></h2>
-<br>
-<br>
-
-
-<h2><a href="ViewCategory">View Category</a></h2>
+<h4><a href="mapToLoginAdmin">Click here to go to admin home page</a></h4>
 
 </body>
 </html>

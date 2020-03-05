@@ -1,75 +1,78 @@
 package com.cts.controller;
 
-import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cts.dao.CategoryRepDao;
-import com.cts.model.CategoryRepBean;
-import com.cts.model.LoginBean;
-import com.cts.model.UserBean;
+import com.cts.dao.CategoryDao;
+import com.cts.model.CategoryBean;
 
 @Controller
 public class CategoryController {
-
+	
 	@Autowired
-	private CategoryRepDao crd;
-	
-	@RequestMapping(value="/RegisterCategory",method=RequestMethod.GET) // category registration page
-	public String registerCategoryRep(@ModelAttribute("categoryRep") CategoryRepBean cb) {
-		return "Register_Category";
+	private CategoryDao catedao;
+
+	@RequestMapping(value="/addCategory",method=RequestMethod.GET)
+	public String addCategory(@ModelAttribute("category1")CategoryBean category) {
+		
+		return "AddCategory";
 	}
 	
-	@RequestMapping(value="/registerCategoryRep",method=RequestMethod.POST) // go to success page
-	public String registerCategoryRepSubmit(@Valid @ModelAttribute("categoryRep")CategoryRepBean cb, BindingResult br) {
-		
-		String page="Register_Category";
+	@PostMapping("/result")
+	public String addtoDB(@Valid @ModelAttribute("category1") CategoryBean cat,BindingResult br) {
 		
 		if(br.hasErrors()) {
-			page="Register_Category";
-		}
-		else {
-			crd.save(cb);
-			page="categoryrepsuccess";
+			return "AddCategory";
 		}
 		
-		return page;
+		catedao.save(cat);
+		return "result";
 	}
 	
-	@RequestMapping(value="/SignCategory",method=RequestMethod.GET) // category sign in
-	public String signInCategoryRep(@ModelAttribute("login")LoginBean loginBean) {
-		return "CategorySignin";
-	}
-	
-	@PostMapping("/loginrep")
-	public ModelAndView signInRep(@Valid @ModelAttribute("login")LoginBean loginBean,BindingResult br,HttpSession session) {
+	@RequestMapping(value="/ViewCategory",method=RequestMethod.GET)
+	public String ViewCategory(Model m) {
 		
-		ModelAndView mv=new ModelAndView("CategorySignin", "flag", 1);
-
+		List<CategoryBean> opt= catedao.findAll();
+		m.addAttribute("course", opt);
+			
+		return "ViewCategory";
+	}
+	
+	@RequestMapping(value="/updateCategoryPage",method=RequestMethod.GET)
+	public String updateCoursePage(@RequestParam("cid")Integer cid,Model m) {
+		
+		Optional<CategoryBean> opt= catedao.findById(cid);
+		CategoryBean category=opt.get();
+		
+		m.addAttribute("category1", category);
+		
+		return "updateCategoryPage";
+	}
+	
+	@PostMapping("/updateCategory")
+	public String updateCourse(@Valid @ModelAttribute("category1")CategoryBean cat,BindingResult br) {
+		
 		if(br.hasErrors()) {
-			mv=new ModelAndView("CategorySignin");
+			return "updateCategoryPage";
 		}
-		else {
-			
-			CategoryRepBean user=crd.validateRep(loginBean.getUserid(), loginBean.getPassword());
-
-			if(user != null)
-			{
-			mv=new ModelAndView("RepHome");
-			session.setAttribute("rep", user);
-			}
+		
+		catedao.save(cat);
+		
+		return "updateSuccess";
+		
 		}
-			
-		return mv;
-	}
-	
+		
 	
 }
