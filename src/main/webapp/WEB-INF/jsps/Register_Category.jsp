@@ -32,7 +32,10 @@
       
       <f:input class="un " path="categoryrepid" type="text" align="center" placeholder="CategoryRep_id"/><p><f:errors path="categoryrepid"/></p>
       
-      <f:input class="un " type="text" path="category" align="center" placeholder="Category"/><p><f:errors path="category"/></p>
+      <f:select class="un "  path="category" align="center">
+      <f:options items="${CategoryName }"></f:options> 
+      </f:select>
+      <p><f:errors path="category"/></p>
       
       <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><p><f:errors path="password"/></p>
       
