@@ -4,12 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="/stylesuccess3.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<title>Registered Successfully</title>
 </head>
 <body>
-<h1>User Registered Successfully</h1><br>
-
-<h4><a href="hi">Click here to Sign-in</a></h4>
-
+<div class="main">
+<p class="sign" align="center">User Registered Successfully</p>
+<br>
+<a class="submit" href="hi">Click here to Sign-in</a>
+</div>
 </body>
 </html>

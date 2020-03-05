@@ -1,11 +1,14 @@
 package com.cts.controller;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,8 +72,16 @@ public class UserController {
 			page="Register_User";
 		}
 		else {
-			rd.save(rb);
-			page="success";
+			Optional<UserBean> op= rd.findById(rb.getUserid());
+			if(op==null) {
+				rd.save(rb);
+				page="success";
+			}
+			else {
+				UserBean ub=op.get();
+				br.addError(new FieldError("userid", "userid", ub.getUserid()+" userid aldready exists"));
+				page="Register_User";
+			}
 		}
 		
 		return page;

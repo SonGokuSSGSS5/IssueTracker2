@@ -4,13 +4,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="/stylesuccess1.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <title>category rep registered</title>
 </head>
 <body>
+<div class="main">
 
-<h1>Category rep registered successfully</h1>
+<p class="sign" align="center">Category Representative Registered Successfully</p>
+<br>
 
-<h4><a href="SignCategory">Click here to Sign-in</a></h4>
+<a class="submit" href="SignCategory">Click here to Sign-in</a>
 
+</div>
 </body>
 </html>

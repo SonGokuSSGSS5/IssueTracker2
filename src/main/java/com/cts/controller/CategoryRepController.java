@@ -2,6 +2,7 @@ package com.cts.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,7 @@ import com.cts.dao.CategoryRepDao;
 import com.cts.model.CategoryBean;
 import com.cts.model.CategoryRepBean;
 import com.cts.model.LoginBean;
+
 
 
 @Controller
@@ -37,7 +40,6 @@ public class CategoryRepController {
 		
 		List<CategoryBean> clist=catdao.findAll();
 		
-		
 		List<String> catList=new  ArrayList<String>();
 		
 		for(CategoryBean c:clist) {
@@ -45,27 +47,56 @@ public class CategoryRepController {
 			catList.add(c.getCategory());
 		}
 		
-		
-		
-		
-		
-		
 		m.addAttribute("CategoryName", catList);
 		
 		return "Register_Category";
 	}
 	
 	@RequestMapping(value="/registerCategoryRep",method=RequestMethod.POST) // go to success page
-	public String registerCategoryRepSubmit(@Valid @ModelAttribute("categoryRep")CategoryRepBean cb, BindingResult br) {
+	public String registerCategoryRepSubmit(@Valid @ModelAttribute("categoryRep")CategoryRepBean cb, BindingResult br,Model m) {
 		
 		String page="Register_Category";
 		
 		if(br.hasErrors()) {
+			
+			List<CategoryBean> clist=catdao.findAll();
+			
+			List<String> catList=new  ArrayList<String>();
+			
+			for(CategoryBean c:clist) {
+				
+				catList.add(c.getCategory());
+			}
+			
+			m.addAttribute("CategoryName", catList);
+			
 			page="Register_Category";
 		}
 		else {
-			crd.save(cb);
-			page="categoryrepsuccess";
+			
+			Optional<CategoryRepBean> op= crd.findById(cb.getCategoryrepid());
+			
+			if(op==null) {
+				crd.save(cb);
+				page="categoryrepsuccess";
+			}
+			else {
+				
+				List<CategoryBean> clist=catdao.findAll();
+				
+				List<String> catList=new  ArrayList<String>();
+				
+				for(CategoryBean c:clist) {
+					
+					catList.add(c.getCategory());
+				}
+				
+				m.addAttribute("CategoryName", catList);
+				
+				CategoryRepBean ub=op.get();
+				br.addError(new FieldError("categoryrepid", "categoryrepid", ub.getCategoryrepid()+" CategoryRepId aldready exists"));
+				page="Register_Category";
+			}
 		}
 		
 		return page;
