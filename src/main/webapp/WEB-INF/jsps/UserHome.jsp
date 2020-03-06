@@ -10,5 +10,16 @@
 
 <h1> Welcome ${user.userid }</h1>
 
+<h2>
+		
+			<a href="RaiseIssue?uid=${user.userid }">Raise Issue</a><br><br><br>
+			
+			<a href="ViewIssueHistory?uid=${user.userid }">View Issue History</a><br><br><br>
+			
+			
+		
+		</h2>
+
+
 </body>
 </html>

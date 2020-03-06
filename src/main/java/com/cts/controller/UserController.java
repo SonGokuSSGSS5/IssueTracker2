@@ -73,11 +73,14 @@ public class UserController {
 		}
 		else {
 			Optional<UserBean> op= rd.findById(rb.getUserid());
-			if(op==null) {
+			if(!op.isPresent()) {
+				
+				System.out.println("No Record Present");
 				rd.save(rb);
 				page="success";
 			}
 			else {
+				System.out.println("WTF");
 				UserBean ub=op.get();
 				br.addError(new FieldError("userid", "userid", ub.getUserid()+" userid aldready exists"));
 				page="Register_User";

@@ -1,5 +1,7 @@
 package com.cts.model;
 
+//import java.util.String;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -161,5 +163,14 @@ public class UserBean {
 	public UserBean() {
 		
 	}
+
+	@Override
+	public String toString() {
+		return "UserBean [firstname=" + firstname + ", lastname=" + lastname + ", dob=" + dob + ", gender=" + gender
+				+ ", contactno=" + contactno + ", userid=" + userid + ", password=" + password + ", squestion1="
+				+ squestion1 + ", sanswer1=" + sanswer1 + ", squestion2=" + squestion2 + ", sanswer2=" + sanswer2
+				+ ", squestion3=" + squestion3 + ", sanswer3=" + sanswer3 + "]";
+	}
+	
 	
 }
