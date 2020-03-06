@@ -42,9 +42,9 @@
 <c:forEach var="cr" items="${course }" >
 
 		<tr>
-			<th>${cr.categoryid }</th>
+			<th style="color:white">${cr.categoryid }</th>
 			
-			<th>${cr.category }</th>
+			<th style="color:white">${cr.category }</th>
 			
 			<th><a href="updateCategoryPage?cid=${cr.categoryid}" >EDIT</a></th>
 			
