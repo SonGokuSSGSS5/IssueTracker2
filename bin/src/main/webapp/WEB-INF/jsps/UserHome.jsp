@@ -12,13 +12,16 @@
 <body>
 <div class="main">
 
-<p class="sign" align="center">Welcome asd</p>
+
+<p class="sign" align="center">Welcome ${user.userid }</p>
+
 <br>
 <br>
 		
-<a class="raise" href="RaiseIssue?uid=asd">Raise Issue</a><br><br><br>
+
+<a class="raise" href="RaiseIssue?uid=${user.userid }">Raise Issue</a><br><br><br>
 <br>		
-<a class="view"  href="ViewIssueHistory?uid=asd">View Issue History</a><br><br><br>
+<a class="view"  href="ViewIssueHistory?uid=${user.userid }">View Issue History</a><br><br><br>
 			
 <p class="forgot" align="center"><a href="#">Help</a></p>
       
