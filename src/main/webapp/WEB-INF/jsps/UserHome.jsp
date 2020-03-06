@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -13,10 +12,13 @@
 <body>
 <div class="main">
 
+
 <p class="sign" align="center">Welcome ${user.userid }</p>
+
 <br>
 <br>
 		
+
 <a class="raise" href="RaiseIssue?uid=${user.userid }">Raise Issue</a><br><br><br>
 <br>		
 <a class="view"  href="ViewIssueHistory?uid=${user.userid }">View Issue History</a><br><br><br>

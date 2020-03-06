@@ -17,10 +17,14 @@
 <div class="main">
 	<p class="sign" align="center">Raise Issue</p>
 	<br>
+
+	
+
 	<f:form action="RaiseIssueSuccess" method="post"
 		modelAttribute="RaiseIssueBean">
- 
+
 	<f:select path="category" id="select-button">
+
 			<option disabled selected value>Choose Category</option>
 			<f:options items="${categoryList }" />
 		</f:select>
@@ -35,6 +39,7 @@
 <f:hidden path="askedby" value="${user }"/>
 
 <input class="raise" type="submit" value="RaiseIssue">
+
 
 
 	</f:form>
