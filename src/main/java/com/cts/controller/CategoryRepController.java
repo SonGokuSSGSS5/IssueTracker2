@@ -76,7 +76,7 @@ public class CategoryRepController {
 			
 			Optional<CategoryRepBean> op= crd.findById(cb.getCategoryrepid());
 			
-			if(op==null) {
+			if(!op.isPresent()) {
 				crd.save(cb);
 				page="categoryrepsuccess";
 			}

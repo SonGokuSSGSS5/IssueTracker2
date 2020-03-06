@@ -17,12 +17,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cts.dao.CategoryDao;
 import com.cts.model.CategoryBean;
+import com.cts.service.CategoryService;
 
 @Controller
 public class CategoryController {
 	
 	@Autowired
 	private CategoryDao catedao;
+	
+	@Autowired
+	private CategoryService cs;
 
 	@RequestMapping(value="/addCategory",method=RequestMethod.GET)
 	public String addCategory(@ModelAttribute("category1")CategoryBean category) {
@@ -62,13 +66,15 @@ public class CategoryController {
 	}
 	
 	@PostMapping("/updateCategory")
-	public String updateCourse(@Valid @ModelAttribute("category1")CategoryBean cat,BindingResult br) {
+	public String updateCourse(@Valid @ModelAttribute("category1")CategoryBean cat,BindingResult br, Model m) {
 		
 		if(br.hasErrors()) {
 			return "updateCategoryPage";
 		}
 		
-		catedao.save(cat);
+		String msg=cs.updateCategory(cat);
+		
+		m.addAttribute("message", msg);
 		
 		return "updateSuccess";
 		

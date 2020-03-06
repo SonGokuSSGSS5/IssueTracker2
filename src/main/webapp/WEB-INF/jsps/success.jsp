@@ -14,7 +14,7 @@
 <div class="main">
 <p class="sign" align="center">User Registered Successfully</p>
 <br>
-<a class="submit" href="hi">Click here to Sign-in</a>
+<a class="submit" href="/#">Click here to Sign-in</a>
 </div>
 </body>
 </html>
