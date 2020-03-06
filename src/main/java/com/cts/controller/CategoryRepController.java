@@ -113,7 +113,7 @@ public class CategoryRepController {
 		ModelAndView mv=new ModelAndView("CategorySignin", "flag", 1);
 
 		if(br.hasErrors()) {
-			mv=new ModelAndView("CategorySignin");
+			mv=new ModelAndView("Home");
 		}
 		else {
 			

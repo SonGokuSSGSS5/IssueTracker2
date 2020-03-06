@@ -28,13 +28,11 @@
 			<option disabled selected value>Choose Category</option>
 			<f:options items="${categoryList }" />
 		</f:select>
-		<br>
-		<br>
-		<br>
+<p><f:errors path="category"/></p>
 
-<f:input class="un " path="topic" placeholder="Topic"/><br><br>
+<f:input class="un " path="topic" placeholder="Topic"/><p><f:errors path="topic"/></p>
 
-<f:input class="un " path="description" placeholder="Issue"/><br><br>
+<f:input class="un " path="description" placeholder="Issue"/><p><f:errors path="description"/></p>
 
 <f:hidden path="askedby" value="${user }"/>
 

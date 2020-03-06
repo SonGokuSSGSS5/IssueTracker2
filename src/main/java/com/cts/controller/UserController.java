@@ -27,7 +27,7 @@ public class UserController {
 	
 	@RequestMapping(value="/",method=RequestMethod.GET) //load the basic user sign in page
 	public String index(@ModelAttribute("login")LoginBean loginBean) {
-		return "index";
+		return "Home";
 	}
 
 	@PostMapping("/login")
@@ -36,7 +36,7 @@ public class UserController {
 		ModelAndView mv=new ModelAndView("index", "flag", 1);
 
 		if(br.hasErrors()) {
-			mv=new ModelAndView("index");
+			mv=new ModelAndView("Home");
 		}
 		else {
 			

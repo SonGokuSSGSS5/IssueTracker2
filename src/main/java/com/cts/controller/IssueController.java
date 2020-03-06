@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.cts.dao.raiseissuedao;
 import com.cts.model.CategoryBean;
 import com.cts.model.RaiseIssueBean;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
 public class IssueController {
@@ -32,6 +34,8 @@ public class IssueController {
 		
 		List<String> clist = new ArrayList<String>();
 		
+		
+		
 		for(CategoryBean cb:cbean) {
 			clist.add(cb.getCategory());
 		}
@@ -43,9 +47,16 @@ public class IssueController {
 	}
 	
 	@PostMapping("/RaiseIssueSuccess")
-	public String addtoDB(@ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue) {
+	public String addtoDB(@Valid @ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue,BindingResult br) {
+		
+		
+		if(br.hasErrors()) {
+			return "RaiseIssue";
+		}
+		
 		
 		rdao.save(raiseissue);
+		
 		
 		return "RaiseIssueSuccess";
 	}

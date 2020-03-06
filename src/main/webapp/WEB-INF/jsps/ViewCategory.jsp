@@ -13,8 +13,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <div class="main">
+<br>
+<a  class="submit" href="mapToLoginAdmin">Back</a>
 <p class="sign" align="center">View Category</p>
 <br>
 <table border="2" align="center" cellspacing="10"  cellpadding="10">

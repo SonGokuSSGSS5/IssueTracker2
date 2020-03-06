@@ -37,7 +37,7 @@ public class AdminController {
 		ModelAndView mv=new ModelAndView("AdminSignin", "flag", 1);
 
 		if(br.hasErrors()) {
-			mv=new ModelAndView("AdminSignin");
+			mv=new ModelAndView("Home");
 		}
 		else {
 			
@@ -57,5 +57,11 @@ public class AdminController {
 	public String goToAdminHomePage() {
 		return "AdminHome";
 	}
+	@GetMapping("/LogoutAdmin")
+	public String logoutAdmin(@ModelAttribute("login")LoginBean loginBean,HttpSession session) {
+		session.removeAttribute("admin");
+		return "AdminSignin";
+	}
+	
 	
 }

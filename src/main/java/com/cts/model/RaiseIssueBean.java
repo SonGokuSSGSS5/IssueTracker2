@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -19,9 +20,11 @@ public class RaiseIssueBean {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
-	
+	@NotBlank(message = "Category is mandatory")
 	private String category;
+	@NotBlank(message = "Topic is mandatory")
 	private String topic;
+	@NotBlank(message = "Issue is mandatory")
 	private String description;
 	
 	

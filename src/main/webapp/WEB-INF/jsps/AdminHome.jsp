@@ -15,7 +15,6 @@
 <p class="sign" align="center">Welcome ${admin.adminid }</p>
 <br>
 <br>
-<br>
 
 <a class="register" href="addCategory">Add Category</a>
 <br>
@@ -23,8 +22,13 @@
 <br>
 <br>
 
+<form action="ViewCategory" method="post">
+<input type="submit" class="register" value="View Category">
+</form>
+<br>
 
-<a class="register" href="ViewCategory">View Category</a>
+
+<p class="links" align="center"><a href="/#">Logout</a></p>
 </div>
 </body>
 </html>
