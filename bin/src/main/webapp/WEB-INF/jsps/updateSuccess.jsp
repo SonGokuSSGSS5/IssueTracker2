@@ -13,7 +13,7 @@
 <body>
 <div class="main">
 
-<p class="sign" align="center">Updated Successfully ${category1.categoryid } and ${category1.category }</p>
+<p class="sign" align="center">${message } ${category1.categoryid } and ${category1.category }</p>
 <br>
 
 <a class="submit" href="mapToLoginAdmin">Go to Admin Home Page</a>

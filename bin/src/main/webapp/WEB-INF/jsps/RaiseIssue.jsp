@@ -16,24 +16,28 @@
 <body>
 <div class="main">
 	<p class="sign" align="center">Raise Issue</p>
+	<br>
+
 	
+
 	<f:form action="RaiseIssueSuccess" method="post"
 		modelAttribute="RaiseIssueBean">
- 
-	<f:select path="category">
+
+	<f:select path="category" id="select-button">
+
 			<option disabled selected value>Choose Category</option>
 			<f:options items="${categoryList }" />
 		</f:select>
-		<br>
-		<br>
+<p><f:errors path="category"/></p>
 
-<f:input class="un " path="topic" placeholder="Topic"/><br><br>
+<f:input class="un " path="topic" placeholder="Topic"/><p><f:errors path="topic"/></p>
 
-<f:input class="un " path="description" placeholder="Issue"/><br><br>
+<f:input class="un " path="description" placeholder="Issue"/><p><f:errors path="description"/></p>
 
 <f:hidden path="askedby" value="${user }"/>
 
-<input class="submit" type="submit" value="RaiseIssue">
+<input class="raise" type="submit" value="RaiseIssue">
+
 
 
 	</f:form>

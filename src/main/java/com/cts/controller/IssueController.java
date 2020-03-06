@@ -15,7 +15,7 @@ import com.cts.dao.CategoryDao;
 import com.cts.dao.raiseissuedao;
 import com.cts.model.CategoryBean;
 import com.cts.model.RaiseIssueBean;
-import javax.servlet.http.HttpSession;
+
 import javax.validation.Valid;
 
 @Controller
@@ -47,10 +47,21 @@ public class IssueController {
 	}
 	
 	@PostMapping("/RaiseIssueSuccess")
-	public String addtoDB(@Valid @ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue,BindingResult br) {
+	public String addtoDB(@Valid @ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue,BindingResult br,Model m) {
 		
 		
 		if(br.hasErrors()) {
+			
+			List<CategoryBean> cbean = cdao.findAll();
+			
+			List<String> clist = new ArrayList<String>();
+		
+			for(CategoryBean cb:cbean) {
+				clist.add(cb.getCategory());
+			}
+			
+			m.addAttribute("categoryList", clist);
+			
 			return "RaiseIssue";
 		}
 		
