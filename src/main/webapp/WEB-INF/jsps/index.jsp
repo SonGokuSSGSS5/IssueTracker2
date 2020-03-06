@@ -30,7 +30,7 @@
       
       <a class="register" href="/RegisterUser" align="center">Register</a>
       
-      <p class="forgot" align="center"><a href="#">Forgot Password?</a></p>
+      <p class="forgot" align="center"><a href="/forgot">Forgot Password?</a></p>
       
       <p class="links" align="center"><a href="/SignAdmin">Sign in as Admin</a></p>
       

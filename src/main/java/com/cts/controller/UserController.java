@@ -89,6 +89,11 @@ public class UserController {
 		
 		return page;
 	}
+	@RequestMapping(value="/forgot",method=RequestMethod.GET) //load the basic user sign in page
+	public String forgotPassword() {
+		
+		return "index";
+	}
 	
 	
 }

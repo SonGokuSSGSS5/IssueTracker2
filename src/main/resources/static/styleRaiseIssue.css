@@ -8,7 +8,7 @@ body {
     .main {
         background-color: #FFFFFF;
         width: 400px;
-        height: 400px;
+        height: 450px;
         margin: 7em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -21,6 +21,16 @@ body {
         font-weight: bold;
         font-size: 23px;
     }
+    
+    #select-button
+	{
+		width: 76%;
+	    position: relative;
+	    padding: 8px 10px;
+	    margin-left:50px;
+	    border-radius: 4px;
+	    background-color: #C5C4F5
+	}
     
     .un {
     width: 76%;
