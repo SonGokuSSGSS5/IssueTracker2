@@ -24,8 +24,8 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Sidebar/menu -->
 <div class="navbars">
-<nav class="w3-sidebar w3-bar-block w3-black w3-animate-left w3-text-white w3-collapse w3-top w3-center" style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
-  <h3 class="w3-padding-64 w3-center"><b>Issue Tracker</b></h3>
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-left w3-text-white w3-collapse w3-top w3-center" style="z-index:3;width:200px;font-weight:bold;font-size:100px;" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>Issue Trackers</b></h3>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
   <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">User</a> 
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Category Rep</a> 

@@ -45,7 +45,7 @@ public class CategoryController {
 		return "result";
 	}
 	
-	@RequestMapping(value="/ViewCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/ViewCategory",method=RequestMethod.GET)
 	public String ViewCategory(Model m) {
 		
 		List<CategoryBean> opt= catedao.findAll();

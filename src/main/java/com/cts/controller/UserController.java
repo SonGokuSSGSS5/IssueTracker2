@@ -44,7 +44,7 @@ public class UserController {
 
 			if(user != null)
 			{
-			mv=new ModelAndView("UserHome");
+			mv=new ModelAndView("User_Home");
 			session.setAttribute("user", user);
 			}
 		}

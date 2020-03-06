@@ -11,6 +11,9 @@
   <title>Register</title>
 </head>
 <body>
+<div class="row">
+  
+</div>
 <div class="main">
     <p class="sign" align="center">Register</p>
     
@@ -23,9 +26,9 @@
       <form:input class="un " type="date" align="center" path="dob" placeholder="DOB"/><br><p><form:errors path="dob"/></p>
       
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<form:radiobutton path="gender" id="male" name="gender" value="male"/>
-	  <label for="male">Male</label>
+	  <label for="male" style="color:white;">Male</label>
 	  <form:radiobutton path="gender" id="female" name="gender" value="female"/>
-	  <label for="female">Female</label><p><form:errors path="gender"/></p>
+	  <label for="female" style="color:white;">Female</label><p><form:errors path="gender"/></p>
 	  
       <form:input  path="contactno" class="un " type="text" align="center" placeholder="ContactNo"/><p><form:errors path="contactno"/></p>
       
@@ -33,7 +36,7 @@
       
       <form:input path="password" class="pass" type="password" align="center" placeholder="Password"/><p><form:errors path="password"/></p>
       
-      <form:select path="squestion1" id="select-button" name="q1">
+      <form:select class="un " path="squestion1" name="q1">
       <option disabled selected value>Question 1</option>
 	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
 	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
@@ -44,7 +47,7 @@
 
 	  <form:input class="un " path="sanswer1"  type="text" align="center" placeholder="Answer 1"/><p><form:errors path="sanswer1"/></p>
 	  
-	  <form:select path="squestion2" id="select-button2" name="q2">
+	  <form:select class="un " path="squestion2" name="q2">
 	  <option disabled selected value>Question 2</option>
 	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
 	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
@@ -55,7 +58,7 @@
 
 	  <form:input class="un " path="sanswer2" type="text" align="center" placeholder="Answer 2"/><p><form:errors path="sanswer2"/></p>
 	  
-	  <form:select path="squestion3" id="select-button3" name="q3">
+	  <form:select class="un " path="squestion3" name="q3">
 	  <option disabled selected value>Question 3</option>
 	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
 	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
@@ -68,6 +71,9 @@
 	  <form:input class="un " path="sanswer3" type="text" align="center" placeholder="Answer 3"/><p><form:errors path="sanswer3"/></p>
 	  <br>
 	  <input type="submit" class="submit" align="center" value="Register">
+	  <br>
+	  <br>
+	  <br>
     </form:form>      
                 
     </div>

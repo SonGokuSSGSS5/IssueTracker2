@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="/style5.css">
+  <link rel="stylesheet" href="/style2.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -24,9 +24,9 @@
       <f:input class="un " type="date" path="dob" align="center" placeholder="DOB"/><br><p><f:errors path="dob"/></p>
       
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<f:radiobutton path="gender"  id="male" name="gender" value="male"/>
-	  <label for="male">Male</label>
+	  <label for="male" style="color:white;">Male</label>
 	  <f:radiobutton path="gender" id="female" name="gender" value="female"/>
-	  <label for="female">Female</label><p><f:errors path="gender"/></p><br>
+	  <label for="female" style="color:white;">Female</label><p><f:errors path="gender"/></p><br>
 	  
       <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><p><f:errors path="contactno"/></p>
       
@@ -40,6 +40,9 @@
       <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><p><f:errors path="password"/></p>
       
 	  <input type="submit" class="submit" value="Register">
+	  <br>
+	  <br>
+	  <br>
     </f:form>      
                 
     </div>
