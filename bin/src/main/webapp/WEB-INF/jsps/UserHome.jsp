@@ -1,20 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="/stylesuccess3.css">
+<link rel="stylesheet" href="/styleUserHome.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<title>Registered Successfully</title>
+<title>User Home</title>
 </head>
 <body>
 <div class="main">
-<p class="sign" align="center">User Registered Successfully</p>
+
+<p class="sign" align="center">Welcome asd</p>
 <br>
-<a class="submit" href="hi">Click here to Sign-in</a>
+<br>
+		
+<a class="raise" href="RaiseIssue?uid=asd">Raise Issue</a><br><br><br>
+<br>		
+<a class="view"  href="ViewIssueHistory?uid=asd">View Issue History</a><br><br><br>
+			
+<p class="forgot" align="center"><a href="#">Help</a></p>
+      
+<p class="links" align="center"><a href="/#">Logout</a></p>			
+		
+
+
 </div>
 </body>
 </html>

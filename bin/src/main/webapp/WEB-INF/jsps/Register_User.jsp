@@ -35,10 +35,10 @@
       
       <form:select path="squestion1" id="select-button" name="q1">
       <option disabled selected value>Question 1</option>
-	  <form:option value="volvo">Name of your First Pet?</form:option>
-	  <form:option value="saab">Name of the first Movie you watched?</form:option>
-	  <form:option value="mercedes">What is your mother's maiden name?</form:option>
-	  <form:option value="audi">What is the name of the town where you were born?</form:option>
+	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
+	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
+	  <form:option value="What is your mother's maiden name?">What is your mother's maiden name?</form:option>
+	  <form:option value="What is the name of the town where you were born?">What is the name of the town where you were born?</form:option>
 	  </form:select>
 	  <p><form:errors path="squestion1"/></p>
 
@@ -46,10 +46,10 @@
 	  
 	  <form:select path="squestion2" id="select-button2" name="q2">
 	  <option disabled selected value>Question 2</option>
-	  <form:option value="volvo">Name of your First Pet?</form:option>
-	  <form:option value="saab">Name of the first Movie you watched?</form:option>
-	  <form:option value="mercedes">What is your mother's maiden name?</form:option>
-	  <form:option value="audi">What is the name of the town where you were born?</form:option>
+	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
+	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
+	  <form:option value="What is your mother's maiden name?">What is your mother's maiden name?</form:option>
+	  <form:option value="What is the name of the town where you were born?">What is the name of the town where you were born?</form:option>
 	  </form:select>
 	  <p><form:errors path="squestion2"/></p>
 
@@ -57,10 +57,10 @@
 	  
 	  <form:select path="squestion3" id="select-button3" name="q3">
 	  <option disabled selected value>Question 3</option>
-	  <form:option value="volvo">Name of your First Pet?</form:option>
-	  <form:option value="saab">Name of the first Movie you watched?</form:option>
-	  <form:option value="mercedes">What is your mother's maiden name?</form:option>
-	  <form:option value="audi">What is the name of the town where you were born?</form:option>
+	  <form:option value="Name of your First Pet?">Name of your First Pet?</form:option>
+	  <form:option value="Name of the first Movie you watched?">Name of the first Movie you watched?</form:option>
+	  <form:option value="What is your mother's maiden name?">What is your mother's maiden name?</form:option>
+	  <form:option value="What is the name of the town where you were born?">What is the name of the town where you were born?</form:option>
 	  </form:select>
 	  <p><form:errors path="squestion3"/></p>
 
