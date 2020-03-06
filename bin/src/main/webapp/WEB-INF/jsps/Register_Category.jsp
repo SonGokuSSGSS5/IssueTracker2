@@ -26,13 +26,16 @@
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<f:radiobutton path="gender"  id="male" name="gender" value="male"/>
 	  <label for="male">Male</label>
 	  <f:radiobutton path="gender" id="female" name="gender" value="female"/>
-	  <label for="female">Female</label><p><f:errors path="gender"/></p><br><br> 
+	  <label for="female">Female</label><p><f:errors path="gender"/></p><br>
 	  
       <f:input class="un " path="contactno" type="text" align="center" placeholder="ContactNo"/><p><f:errors path="contactno"/></p>
       
       <f:input class="un " path="categoryrepid" type="text" align="center" placeholder="CategoryRep_id"/><p><f:errors path="categoryrepid"/></p>
       
-      <f:input class="un " type="text" path="category" align="center" placeholder="Category"/><p><f:errors path="category"/></p>
+      <f:select class="un "  path="category" align="center">
+      <f:options items="${CategoryName }"></f:options> 
+      </f:select>
+      <p><f:errors path="category"/></p>
       
       <f:input class="pass" path="password" type="password" align="center" placeholder="Password"/><p><f:errors path="password"/></p>
       
