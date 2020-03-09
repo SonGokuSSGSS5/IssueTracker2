@@ -20,7 +20,9 @@ import com.cts.dao.CategoryDao;
 import com.cts.dao.raiseissuedao;
 import com.cts.model.CategoryBean;
 import com.cts.model.RaiseIssueBean;
+import com.cts.model.UserBean;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -40,7 +42,6 @@ public class IssueController {
 		List<String> clist = new ArrayList<String>();
 		
 		
-		
 		for(CategoryBean cb:cbean) {
 			clist.add(cb.getCategory());
 		}
@@ -52,9 +53,11 @@ public class IssueController {
 	}
 	
 	@PostMapping("/RaiseIssueSuccess")
-	public String addtoDB(@Valid @ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue,BindingResult br,Model m) {
+	public String addtoDB(@Valid @ModelAttribute("RaiseIssueBean")RaiseIssueBean raiseissue,BindingResult br,Model m,HttpSession session) {
 		
-		
+		if(session.getAttribute("user")!=null) {
+		raiseissue.setAskedby(((UserBean)session.getAttribute("user")).getUserid());
+		}
 		if(br.hasErrors()) {
 			
 			List<CategoryBean> cbean = cdao.findAll();
@@ -78,8 +81,8 @@ public class IssueController {
 	}
 	
 	@GetMapping("/ViewIssueHistory")
-	public String ViewUpdateIssue(String uid,Model m) {
-			
+	public String ViewUpdateIssue(String uid,Model m,HttpSession session) {
+		uid=((UserBean)session.getAttribute("user")).getUserid();	
 		List<RaiseIssueBean> rib = rdao.viewIssue(uid);
 		
 		for(RaiseIssueBean rb: rib)
