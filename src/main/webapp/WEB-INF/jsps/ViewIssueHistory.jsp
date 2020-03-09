@@ -14,7 +14,7 @@
 <table border="2" align="center" cellspacing="10"  cellpadding="10">
 
 	<tr>
-		<th>IssueId</th>
+		<th>IssueIds</th>
 		<th>CategoryName</th>
 		<th>Topic</th>
 		<th>Description</th>
