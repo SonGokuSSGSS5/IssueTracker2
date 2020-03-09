@@ -102,15 +102,15 @@ public class CategoryRepController {
 		return page;
 	}
 	
-	@RequestMapping(value="/SignCategory",method=RequestMethod.GET) // category sign in
+	@RequestMapping(value="/CategoryLogin",method=RequestMethod.GET) // category sign in
 	public String signInCategoryRep(@ModelAttribute("login")LoginBean loginBean) {
-		return "CategorySignin";
+		return "Login_Rep";
 	}
 	
 	@PostMapping("/loginrep")
 	public ModelAndView signInRep(@Valid @ModelAttribute("login")LoginBean loginBean,BindingResult br,HttpSession session) {
 		
-		ModelAndView mv=new ModelAndView("CategorySignin", "flag", 1);
+		ModelAndView mv=new ModelAndView("Login_Rep", "flag", 1);
 
 		if(br.hasErrors()) {
 			mv=new ModelAndView("Home");

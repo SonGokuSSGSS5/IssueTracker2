@@ -26,15 +26,15 @@ public class AdminController {
 	@Autowired
 	private AdminDao ad;
 	
-	@RequestMapping(value="/SignAdmin",method=RequestMethod.GET) // sign in page for admin
+	@RequestMapping(value="/AdminLogin",method=RequestMethod.GET) // sign in page for admin
 	public String signInAdmin(@ModelAttribute("login")LoginBean loginBean) {
-		return "AdminSignin";
+		return "Login_Admin";
 	}
 	
 	@PostMapping("/loginadmin")
 	public ModelAndView signInAdmin(@Valid @ModelAttribute("login")LoginBean loginBean,BindingResult br,HttpSession session) {
 		
-		ModelAndView mv=new ModelAndView("AdminSignin", "flag", 1);
+		ModelAndView mv=new ModelAndView("Login_Admin", "flag", 1);
 
 		if(br.hasErrors()) {
 			mv=new ModelAndView("Home");

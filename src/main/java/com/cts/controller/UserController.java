@@ -33,7 +33,7 @@ public class UserController {
 	@PostMapping("/login")
 	public ModelAndView signIn(@Valid @ModelAttribute("login")LoginBean loginBean,BindingResult br,HttpSession session) {
 		
-		ModelAndView mv=new ModelAndView("index", "flag", 1);
+		ModelAndView mv=new ModelAndView("Home", "flag", 1);
 
 		if(br.hasErrors()) {
 			mv=new ModelAndView("Home");

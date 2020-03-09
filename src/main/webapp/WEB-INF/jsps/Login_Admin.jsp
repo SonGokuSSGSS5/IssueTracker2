@@ -50,30 +50,29 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Push down content on small screens --> 
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
-  <!-- Photo grid -->
-  <div class="signin" id="signin">
-  
-  <p class="sign" align="center">Sign in</p>
+  <!-- Contact section -->
+  <div class="adminsign" id="adminsign">
+  <br>
+  <br>
+  <br>
+   <p class="sign" align="center">Admin Sign in</p>
     
-<c:if test="${flag==1 }">
-<h2>Invalid Username or Password</h2>
-</c:if>
+  <c:if test="${flag==1 }">
+		<h2>Invalid AdminId or Password</h2>
+	</c:if>
     
-    <f:form class="form1" method="post" action="login" modelAttribute="login">
-      <f:input class="un " type="text" align="center" path="userid" placeholder="UserId"/><br><f:errors class="error" path="userid"/><br><br>
-      
-      <f:input class="pass" type="password" align="center" path="password" placeholder="Password"/><br><f:errors class="error" path="password"/><br><br>
-      
-      <input class="submit" type="submit" value="Sign in"><br><br><br>
-      
-      <a class="register" href="/RegisterUser" align="center">Register</a>
-      
-      <p class="forgot" align="center"><a href="/forgot">Forgot Password?</a></p>
-      
-    </f:form>
+    <f:form class="form1" method="post" action="loginadmin" modelAttribute="login">
+      <f:input class="un " type="text" align="center" placeholder="Username" path="userid"/><br><f:errors class="error" path="userid" /><br><br>
+      <f:input class="pass" type="password" align="center" placeholder="Password" path="password"/><br><f:errors class="error" path="password" /><br><br>
+      <input class="submit" type="submit" value="Sign in"><br><br>
+    </f:form> 
   </div>
 
+  <!-- Footer -->
   
+
+<!-- End page content -->
+</div>
 
 
 
