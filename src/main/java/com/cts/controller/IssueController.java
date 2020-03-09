@@ -1,7 +1,12 @@
 package com.cts.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -75,12 +80,61 @@ public class IssueController {
 	@GetMapping("/ViewIssueHistory")
 	public String ViewUpdateIssue(String uid,Model m) {
 			
-		List<RaiseIssueBean> rib = rdao.findAll();
+		List<RaiseIssueBean> rib = rdao.viewIssue(uid);
 		
-		m.addAttribute("viewCategory", rib);
+		for(RaiseIssueBean rb: rib)
+		System.out.println(rb);
+		
+		m.addAttribute("rib", rib);
 		m.addAttribute("user", uid);
 		
 		return "ViewIssueHistory";
+	}
+	
+	
+	@GetMapping("/showIssuePage")
+	public String showIssuePage(String cid,Model m) {
+		
+		m.addAttribute("name",	cid);
+		
+		return "showIssuePage";
+	}
+	
+	@GetMapping("issueUpdatePage")
+	public String issueUpdatePage(int id,Model m) {
+		
+		
+		Optional<RaiseIssueBean> opt = rdao.findById(id);
+		
+		RaiseIssueBean rib = opt.get();
+		
+		m.addAttribute("id", id);
+		
+		m.addAttribute("raiseissuebean", rib);		
+		
+		return "issueUpdatePage";
+	}
+	
+	@PostMapping("updateIssueStatus")
+	public String updateIssueStatus(@ModelAttribute("raiseissuebean")RaiseIssueBean raiseisssuebean) {
+		
+		System.out.println(raiseisssuebean);
+		
+		 DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	       Date dateobj = new Date();
+	       System.out.println(df.format(dateobj));
+	       Date d1 = new Date();
+		try {
+			d1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(df.format(dateobj));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	       
+		raiseisssuebean.setTimestamp(d1);
+		rdao.save(raiseisssuebean);
+		
+		return "IssueSuccess";
 	}
 	
 }

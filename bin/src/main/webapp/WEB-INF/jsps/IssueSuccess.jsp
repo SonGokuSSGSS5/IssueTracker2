@@ -7,13 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Rep Login Success Welecome ${rep.categoryrepid }</h1>
 
-
-<h2><a href="viewIssues?rib=${rep.category}">View Issues </a></h2><br><br>
-
-<h2><a href="viewActiveIssues?rib=${rep.category}">View  Active Issues </a></h2>
-
-
+<h1>	Successfully changed</h1>
+	
 </body>
 </html>

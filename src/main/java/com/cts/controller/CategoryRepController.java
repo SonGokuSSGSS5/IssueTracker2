@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +21,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cts.dao.CategoryDao;
 import com.cts.dao.CategoryRepDao;
+import com.cts.dao.ResolutionDao;
+import com.cts.dao.raiseissuedao;
 import com.cts.model.CategoryBean;
 import com.cts.model.CategoryRepBean;
 import com.cts.model.LoginBean;
+import com.cts.model.RaiseIssueBean;
 
 
 
@@ -34,6 +38,12 @@ public class CategoryRepController {
 	
 	@Autowired
 	private CategoryDao catdao;
+	
+	@Autowired
+	private ResolutionDao rdao;
+	
+	@Autowired
+	private raiseissuedao ridao;
 	
 	@RequestMapping(value="/RegisterCategory",method=RequestMethod.GET) // category registration page
 	public String registerCategoryRep(@ModelAttribute("categoryRep") CategoryRepBean cb,Model m) {
@@ -127,6 +137,35 @@ public class CategoryRepController {
 		}
 			
 		return mv;
+	}
+	
+	
+	@GetMapping("viewIssues")
+	public String viewIssues(String rib,HttpSession session,Model m) {
+			
+		
+		
+		List<RaiseIssueBean> ribi = ridao.findByCategory(rib);
+		
+		System.out.println(ribi);
+		
+		m.addAttribute("categoryList", ribi);
+		
+		return "viewIssues";
+	}
+	
+	@GetMapping("viewActiveIssues")
+	public String viewActiveIssues(String rib,HttpSession session,Model m) {
+			
+		
+		
+		List<RaiseIssueBean> ribi = ridao.findByCategoryANDStatus(rib,"Active");
+		
+		System.out.println(ribi);
+		
+		m.addAttribute("categoryList", ribi);
+		
+		return "viewActiveIssues";
 	}
 	
 	
