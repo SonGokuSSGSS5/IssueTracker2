@@ -86,7 +86,7 @@ body {
         background-image:url("image1.png");
         text-align:center;
         height: 700px;
-        margin-top:-2%;
+        margin-top:-4%;
     }
     
     .sign {
@@ -94,6 +94,7 @@ body {
         color: #ffffff;
         font-family: 'Ubuntu', sans-serif;
         font-weight: bold;
+        padding-top:6%;
         font-size: 23px;
     }
     

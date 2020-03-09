@@ -2,8 +2,10 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="/style1.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,23 +24,28 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-black w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<div class="navbars">
-<nav class="w3-sidebar w3-bar-block w3-black w3-animate-left w3-text-white w3-collapse w3-top w3-center" style="z-index:3;width:200px;font-weight:bold;font-size:100px;" id="mySidebar"><br>
-  <h3 class="w3-padding-64 w3-center"><b>Issue Trackers</b></h3>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">User</a> 
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Category Rep</a> 
-  <a href="#adminsign" onclick="w3_close()" class="w3-bar-item w3-button">Admin</a>
+<nav class="site-header sticky-top py-1">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2" href="#" aria-label="Product">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+    </a>
+    <a class="py-2 d-none d-md-inline-block" href="#">User</a>
+    <a class="py-2 d-none d-md-inline-block" href="#about">Category Rep</a>
+    <a class="py-2 d-none d-md-inline-block" href="#adminsign">Admin</a>
+  </div>
 </nav>
-</div>
+
+
+
+
+
 <!-- Top menu on small screens -->
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:200px">
+<div class="w3-main" style="margin-left:0px">
 
   <!-- Push down content on small screens --> 
   <div class="w3-hide-large" style="margin-top:83px"></div>
@@ -53,9 +60,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </c:if>
     
     <f:form class="form1" method="post" action="login" modelAttribute="login">
-      <f:input class="un " type="text" align="center" path="userid" placeholder="UserId"/><h4><f:errors path="userid"/></h4>
+      <f:input class="un " type="text" align="center" path="userid" placeholder="UserId"/><br><f:errors class="error" path="userid"/><br><br>
       
-      <f:input class="pass" type="password" align="center" path="password" placeholder="Password"/><h4><f:errors path="password"/></h4>
+      <f:input class="pass" type="password" align="center" path="password" placeholder="Password"/><br><f:errors class="error" path="password"/><br><br>
       
       <input class="submit" type="submit" value="Sign in"><br><br><br>
       
@@ -64,12 +71,13 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <p class="forgot" align="center"><a href="/forgot">Forgot Password?</a></p>
       
     </f:form>
-    
   </div>
 
   <!-- About section -->
   <div class="about" id="about">
-    
+  <br>
+   <br>
+   <br> 
          <p class="sign" align="center">Category Representative Sign in</p>
    
     <c:if test="${flag==1 }">
@@ -77,9 +85,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</c:if>
     <f:form class="form1" method="post" action="loginrep" modelAttribute="login">
     
-      <f:input class="un " path="userid" type="text" align="center" placeholder="Username"/><h4><f:errors path="userid"/></h4>
+      <f:input class="un " path="userid" type="text" align="center" placeholder="Username"/><br><f:errors class="error" path="userid"/><br><br>
       
-      <f:input class="pass" type="password" align="center" placeholder="Password" path="password"/><h4><f:errors path="password"/></h4>
+      <f:input class="pass" type="password" align="center" placeholder="Password" path="password"/><br><f:errors class="error" path="password"/><br><br>
       
       <input class="submit" align="center" type="submit" value="Sign in"><br><br><br>
       
@@ -90,6 +98,9 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Contact section -->
   <div class="adminsign" id="adminsign">
+  <br>
+  <br>
+  <br>
    <p class="sign" align="center">Admin Sign in</p>
     
   <c:if test="${flag==1 }">
@@ -97,8 +108,8 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	</c:if>
     
     <f:form class="form1" method="post" action="loginadmin" modelAttribute="login">
-      <f:input class="un " type="text" align="center" placeholder="Username" path="userid"/><h4><f:errors path="userid" /></h4>
-      <f:input class="pass" type="password" align="center" placeholder="Password" path="password"/><h4><f:errors path="password" /></h4>
+      <f:input class="un " type="text" align="center" placeholder="Username" path="userid"/><br><f:errors class="error" path="userid" /><br><br>
+      <f:input class="pass" type="password" align="center" placeholder="Password" path="password"/><br><f:errors class="error" path="password" /><br><br>
       <input class="submit" type="submit" value="Sign in"><br><br>
     </f:form> 
   </div>
@@ -109,27 +120,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- End page content -->
 </div>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-</script>
 
 
 </body>
